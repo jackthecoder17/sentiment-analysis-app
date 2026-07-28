@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analysis Demo App</title>
+    <!-- Use a modern font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    
+    <div class="container">
+        <header>
+            <h1>Sentiment Analysis App</h1>
+            <p>This model uses a fine-tuned RoBERTa model to classify text as POSITIVE, NEGATIVE, or NEUTRAL.</p>
+        </header>
+
+        <div class="app-layout">
+            <div class="input-panel panel">
+                <label for="input-text">Input Text</label>
+                <textarea id="input-text" placeholder="Type something here (e.g., 'I love this movie!')..."></textarea>
+                
+                <div class="examples">
+                    <p>Or try an example:</p>
+                    <div class="example-tags">
+                        <span class="example-tag" onclick="setExample(this)">I absolutely love this product! It's amazing.</span>
+                        <span class="example-tag" onclick="setExample(this)">I am very disappointed with the service.</span>
+                        <span class="example-tag" onclick="setExample(this)">It was okay, nothing special.</span>
+                    </div>
+                </div>
+
+                <button id="analyze-btn">
+                    <span>Analyze Tweets</span>
+                    <div class="spinner hidden" id="loading-spinner"></div>
+                </button>
+            </div>
+
+            <div class="output-panel panel">
+                <label>Analysis Result</label>
+                <div id="output-box" class="output-box empty">
+                    <span class="placeholder-text">Result will appear here...</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>
